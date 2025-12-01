@@ -1,0 +1,10 @@
+applications:
+  - name: northwind-node-dest          # your app name shown in CF
+    memory: 256M
+    buildpacks:
+      - nodejs_buildpack               # CF will use SAP Node.js buildpack
+    command: npm start                 # start command for Node.js
+    env:
+      DESTINATION_NAME: Products       # your destination name in cockpit
+    services:
+      - destination-lite               # your Destination instance name

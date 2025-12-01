@@ -1,0 +1,14 @@
+{
+  "name": "northwind-node-destination",
+  "version": "1.0.0",
+  "description": "Node app consuming Northwind OData via SAP BTP Destination",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "axios": "^1.7.0",
+    "@sap/xsenv": "^3.4.0"
+  }
+}
