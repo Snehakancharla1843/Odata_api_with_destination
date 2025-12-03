@@ -1,0 +1,40 @@
+step 1:  we have create node application 
+step 2: installing dependencies
+step 3: configure  the application  to connect to northwind odata service by using server.js
+step 4: deployed in cloud foundry and calling btp destination  calling lite destination service
+step 5: we used cf push command to eploy the application and bind desination service using manifest.yaml
+step 6: tested the application to ensure it successfull retreieves the data from the NOrthwind Odata service  by adding this url 
+https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json
+step 7: to ensure  it is working in local env we have to maek sure that we would reuire .env and install it  and also we require  vcap services 
+step 8: genereate service key name is dev-key and then we have got client secret client id in the form of json and we converted to vcap service  and pasted it in deafult.json
+
+{
+  "VCAP_SERVICES": {
+    "destination": [
+      {
+        "name": "destination-lite",
+        "label": "destination",
+        "tags": ["destination"],
+        "credentials": {
+          "clientid": "sb-clonea75ad6e143f64533a9679f685f2b1162!b546151|destination-xsappname!b62",
+          "clientsecret": "4bce6500-6546-433f-aa20-4ee35b1383e2$TyXZPN4Oob9XHgDuKTgeMRAePIsx1GgyS2LVI8Iu-so=",
+          "credential-type": "binding-secret",
+          "identityzone": "7a689b59trial",
+          "instanceid": "a75ad6e1-43f6-4533-a967-9f685f2b1162",
+          "tenantid": "386180ed-3f11-4b81-9986-e90c6fb2927b",
+          "tenantmode": "dedicated",
+          "token-type": ["xsuaa"],
+          "uaadomain": "authentication.us10.hana.ondemand.com",
+          "uri": "https://destination-configuration.cfapps.us10.hana.ondemand.com",
+          "url": "https://7a689b59trial.authentication.us10.hana.ondemand.com",
+          "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzGgQwk7BZYErg2k//67Z\nN7QYXV/d6D+Lhx9zaV1UTW9GOqEZ41XnxVStzpf+q1wR7DJfM+wT0AC0gbhRVgYi\nvRZsWt/rgFZ6JOR8Dq7HkyX7dz6Y9TUi7GzF4NQm1ZP7TuXePUWdQiEDjVLFo8wH\neAXkrHBWGdVFEEThaN/jAiHFcOS7gAYIIwKC0CHDkQpePnjnEpP7X6GVQWV1ZTRi\nQWuOnQOUIQdvjcFPqTAmDsiyOy0LgpTb7VHMPOrMeDPz7J+kubDQI0FHEMeI+KdZ\nuhNPA2QVYQFjDW+PtSAFq+GmC+y/xctnNhzXKmdR5o1i0X1VbsSYC3idY7D5devM\n5QIDAQAB\n-----END PUBLIC KEY-----",
+          "xsappname": "clonea75ad6e143f64533a9679f685f2b1162!b546151|destination-xsappname!b62"
+        }
+      }
+    ]
+  }
+}
+
+ 
+
+step 9: we saved and run node server.js or pm start  weg can run this in locally
